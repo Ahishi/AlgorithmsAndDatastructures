@@ -1,8 +1,7 @@
 package t2.menu;
 
-import t1.menu.Lue;
-import t1.stack.ListItem;
-import t1.stack.Queue;
+import t2.queue.ListItem;
+import t2.queue.Queue;
 
 /**
  * <p>Title: </p>

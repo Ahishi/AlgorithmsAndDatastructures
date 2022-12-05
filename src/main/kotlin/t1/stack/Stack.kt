@@ -10,9 +10,10 @@ class Stack() {
     }
 
     fun pop(): ListItem?{
+        val deletedObject = storageObject
         storageObject = storageObject?.next
         amount--
-        return storageObject
+        return deletedObject
     }
 
     fun display(){

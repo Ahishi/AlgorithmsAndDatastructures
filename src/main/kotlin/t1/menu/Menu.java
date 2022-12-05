@@ -1,7 +1,7 @@
 package t1.menu;
 
 import t1.stack.ListItem;
-import t1.stack.Queue;
+import t1.stack.Stack;
 
 /**
  * <p>Title: </p>
@@ -27,7 +27,7 @@ public class Menu {
 //printMenu alkaa------------------------------------------------------------------
     private static void printMenu() {
         char select;
-        Queue s = new Queue(); // pino-olio
+        Stack s = new Stack(); // pino-olio
         String data; // Pinon data-kenttä
         do {
 
