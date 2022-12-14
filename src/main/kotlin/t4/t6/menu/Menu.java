@@ -1,6 +1,6 @@
-package t6.menu;
+package t4.t6.menu;
 
-import t6.StackLinkedList;
+import t4.t6.StackLinkedList;
 
 /**
  * <p>Title: </p>
