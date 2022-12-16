@@ -60,7 +60,6 @@ public class BinaryTree {
 
     private BinaryTree findLocator(String aData, BinaryTree parent){
         if(parent != null){
-            System.out.println("Iiii");
             int comparisonValue = aData.compareTo(parent.root.getData());
 
             if(comparisonValue < 0){
