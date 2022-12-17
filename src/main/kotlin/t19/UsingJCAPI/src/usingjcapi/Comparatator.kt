@@ -15,3 +15,9 @@ fun sortByCustom(arr: ArrayList<TrafficCard>): ArrayList<TrafficCard> {
     arr.sortWith(lengthComparator)
     return arr
 }
+
+fun sortByCustom2(arr: ArrayList<TrafficCard>): ArrayList<TrafficCard> {
+    val numberComparator = Comparator { card1: TrafficCard, card2: TrafficCard -> card1.mTravellerNumber.compareTo(card2.mTravellerNumber)}
+    arr.sortWith(numberComparator)
+    return arr
+}

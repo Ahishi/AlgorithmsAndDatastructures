@@ -1,4 +1,4 @@
-package t4.t6.menu;
+package t6.menu;
 
 /**
  * <p>Title: </p>

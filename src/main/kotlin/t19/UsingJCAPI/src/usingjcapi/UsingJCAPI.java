@@ -33,7 +33,7 @@ public class UsingJCAPI {
             cardUsers.add(myCard);
         }
 
-        final int sortTypes = 3;
+        final int sortTypes = 4;
         for(int i2 = 1; i2 <= sortTypes; i2++){
             if(i2 == 1){
                 cardUsers = sortByBalance(cardUsers);
@@ -41,9 +41,12 @@ public class UsingJCAPI {
             } else if (i2 == 2){
                 cardUsers = sortBymOwnerName(cardUsers);
                 System.out.println("Sorder by Owner name: (decending)");
-            } else {
+            } else if(i2 == 3){
                 cardUsers = sortByCustom(cardUsers);
-                System.out.println("Sorder by custom: (decending)");
+                System.out.println("Sorder by custom (owner-name): (acending)");
+            } else {
+                cardUsers = sortByCustom2(cardUsers);
+                System.out.println("Sorder by custom2 (number): (acending)");
             }
 
             Iterator itr = cardUsers.iterator();

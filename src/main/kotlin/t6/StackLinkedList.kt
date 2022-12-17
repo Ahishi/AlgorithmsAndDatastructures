@@ -1,4 +1,4 @@
-package t4.t6
+package t6
 
 import java.util.LinkedList
 
