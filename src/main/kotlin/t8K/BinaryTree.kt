@@ -20,7 +20,7 @@ class BinaryTree {
     }
 
     private fun traverse(node: Node?){
-        println(node?.key)
+        println(node?.key + " and height: " + node?.getNodeHeight())
         if(node?.left != null){
             traverse(node.left)
         }
@@ -119,7 +119,9 @@ class BinaryTree {
                     if(node.left != null){
                         println("Going left!")
                         if(!set){
-                            return setValue(s, node.left, false)
+                            val retrieval = setValue(s, node.left, false)
+                            retrieval.setNodeHeight()
+                            return retrieval
                         }
                         setValue(s, node.left, true)
                     } else if(set){
@@ -130,7 +132,9 @@ class BinaryTree {
                 comparison > 0 -> {
                     if(node.right != null){
                         if(!set){
-                            return setValue(s, node.left, false)
+                            val retrieval = setValue(s, node.right, false)
+                            retrieval.setNodeHeight()
+                            return retrieval
                         }
                         println("Going right!")
                         setValue(s, node.right, true)
@@ -143,6 +147,7 @@ class BinaryTree {
         } else {
             return Node(s)
         }
+        node.setNodeHeight()
         return node
     }
 }

@@ -31,6 +31,7 @@ fun main(){
 
                 println("Print: ")
                 bt.printTree()
+                /*
                 for(i in testSet.indices){
                     println("Delete: " + testSet[i])
                     bt.delete(testSet[i])
@@ -39,6 +40,7 @@ fun main(){
 
                 println("Print: ")
                 bt.printTree()
+                */
             }
             5 -> {
                 bt.printTree()
