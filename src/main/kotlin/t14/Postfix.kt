@@ -7,24 +7,26 @@ import kotlin.collections.ArrayDeque
 
 fun main(){
     val infix = "(3+4)*(5/2)"
-    val postfix: Postfix = Postfix()
-    println(postfix.calculate(infix))
+    val postfix = Postfix()
+    val postfixCalculator = PostfixCalc()
+    val ans = postfix.calculate(infix)
+    println("\nPostfix expression: $ans")
+    println("Answer is: " + postfixCalculator.calculatePostFix(ans))
 }
 
 class Postfix {
 
     private var stack: ArrayDeque<Char> = ArrayDeque()
-    private val ans: Queue<Char> = LinkedList()
+    private var ans: String = ""
 
-    fun calculate(infix: String){
+    fun calculate(infix: String): String{
         val infixArray: CharArray = infix.toCharArray()
         for(char in infixArray){
             when (char) {
                 '+', '-' -> {
                     for((i, operand) in stack.withIndex()){
                         if(operand == '+' || operand == '-'){
-                            val removed = stack.removeAt(i)
-                            ans.add(removed)
+                            ans += stack.removeAt(i)
                             break
                         }
                     }
@@ -33,8 +35,7 @@ class Postfix {
                 '*', '/' -> {
                     for((i, operand) in stack.withIndex()){
                         if(operand == '*' || operand == '/'){
-                            val removed = stack.removeAt(i)
-                            ans.add(removed)
+                            ans += stack.removeAt(i)
                             break
                         }
                     }
@@ -43,9 +44,14 @@ class Postfix {
                 ')' -> {
                     for((i, operand) in stack.withIndex()){
                         if(operand == '('){
-                            for(i2 in i+1 .. stack.lastIndex){
-                                ans.add(stack.removeAt(i2))
+                            stack.removeAt(i)
+                            for(i2 in i until stack.size){
+                                ans += stack[i+i2]
                             }
+                            for(i2 in i until stack.size){
+                                stack.removeAt(i+i2)
+                            }
+                            break
                         }
                     }
                 }
@@ -53,17 +59,18 @@ class Postfix {
                   stack.add(char)
                 }
                 else -> {
-                    ans.add(char)
+                    ans += char
                 }
             }
+
+            print("\nPostfix Stack: ")
+            println(ans)
+
+            print("Operand Stack: ")
             stack.forEach(){ print(it) }
             println()
         }
 
-        print("\n\npostfix: ")
-        ans.forEach(){
-            print(it)
-        }
-        println("\n")
+        return ans
     }
 }
