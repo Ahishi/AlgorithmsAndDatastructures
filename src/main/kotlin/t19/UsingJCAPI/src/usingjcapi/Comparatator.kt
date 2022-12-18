@@ -21,3 +21,12 @@ fun sortByCustom2(arr: ArrayList<TrafficCard>): ArrayList<TrafficCard> {
     arr.sortWith(numberComparator)
     return arr
 }
+
+fun sortWithStreams(arr: ArrayList<TrafficCard>): ArrayList<TrafficCard> {
+    arr
+        .stream()
+        .filter { it: TrafficCard -> it.mBalance > 0 && it.mBalance < 25 }
+        .forEach { e: TrafficCard -> println(e.toString()) }
+
+    return arr
+}

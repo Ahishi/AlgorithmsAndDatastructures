@@ -1,6 +1,6 @@
 package t8K
 
-class BinaryTree {
+internal class BinaryTree {
     var root: Node? = null
 
     fun insert(s: String) {
@@ -89,7 +89,7 @@ class BinaryTree {
         return null
     }
 
-    private fun leftMost(node: Node): Node{
+    private fun leftMost(node: Node): Node {
         if(node.left != null){
             println("Searching left-most: Going Left")
             return leftMost(node.left!!)

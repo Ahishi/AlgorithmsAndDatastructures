@@ -33,20 +33,23 @@ public class UsingJCAPI {
             cardUsers.add(myCard);
         }
 
-        final int sortTypes = 4;
+        final int sortTypes = 5;
         for(int i2 = 1; i2 <= sortTypes; i2++){
             if(i2 == 1){
                 cardUsers = sortByBalance(cardUsers);
-                System.out.println("Sorder by Balance: (decending)");
+                System.out.println("\nSorted by Balance: (decending)");
             } else if (i2 == 2){
                 cardUsers = sortBymOwnerName(cardUsers);
-                System.out.println("Sorder by Owner name: (decending)");
+                System.out.println("\nSorted by Owner name: (decending)");
             } else if(i2 == 3){
                 cardUsers = sortByCustom(cardUsers);
-                System.out.println("Sorder by custom (owner-name): (acending)");
-            } else {
+                System.out.println("\nSorted by custom (owner-name): (acending)");
+            } else if(i2 == 4){
                 cardUsers = sortByCustom2(cardUsers);
-                System.out.println("Sorder by custom2 (number): (acending)");
+                System.out.println("\nSorted by custom2 (number): (acending)");
+            } else {
+                sortWithStreams(cardUsers);
+                System.out.println("\nSorted by with streams (number): (acending)");
             }
 
             Iterator itr = cardUsers.iterator();

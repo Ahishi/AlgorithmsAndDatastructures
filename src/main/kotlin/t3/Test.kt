@@ -2,7 +2,7 @@ package t3
 
 fun main(){
 
-    val testTypes = arrayOf<String>("select sort", "quick sort", "merge sort") //How many sorting styles
+    val testTypes = arrayOf("select sort", "quick sort", "merge sort") //How many sorting styles
     val testSet: IntArray = intArrayOf(200, 3000, 10000) //Test set sizes (how many numbers are generated).
     val iterationAmount = 100 //Each test above is run this many times
 
